@@ -581,7 +581,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 - **Issues**: [GitHub Issues](https://github.com/LiteCoderAI/LiteCoder-Ai/issues)
 - **Discussions**: [GitHub Discussions](https://github.com/LiteCoderAI/LiteCoder-Ai/discussions)
-- **Email**: [Contact Developer](mailto:wahibeasa@example.com)
+- **Email**: [Contact Developer](mailto:wahibeasa2@gmail.com)
 
 ---
 
