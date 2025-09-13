@@ -1,0 +1,176 @@
+{
+  "name": "litecoder-ai",
+  "displayName": "LiteCoder Ai",
+  "description": "Advanced AI-powered code completion with transparent inline suggestions and multi-model ensemble system - Made by Wahibe Asa",
+  "version": "1.0.0",
+  "publisher": "LiteCoderAi",
+  "icon": "logo.jpg",
+  "engines": {
+    "vscode": "^1.74.0"
+  },
+  "categories": [
+    "Other",
+    "Snippets",
+    "Machine Learning"
+  ],
+  "keywords": [
+    "ai",
+    "autocomplete",
+    "code completion",
+    "intellisense",
+    "ghost text",
+    "transparent",
+    "multi-model",
+    "ensemble"
+  ],
+  "activationEvents": [
+    "onLanguage:html",
+    "onLanguage:css",
+    "onLanguage:javascript",
+    "onLanguage:typescript",
+    "onLanguage:python",
+    "onLanguage:php",
+    "onLanguage:json",
+    "onLanguage:lua"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "litecoder.enableTransparentMode",
+        "title": "Enable Transparent Mode",
+        "category": "LiteCoder"
+      },
+      {
+        "command": "litecoder.disableTransparentMode",
+        "title": "Disable Transparent Mode",
+        "category": "LiteCoder"
+      },
+      {
+        "command": "litecoder.acceptSuggestion",
+        "title": "Accept Suggestion",
+        "category": "LiteCoder"
+      },
+      {
+        "command": "litecoder.showSecurityReport",
+        "title": "Show Security Report",
+        "category": "LiteCoder"
+      },
+      {
+        "command": "litecoder.configureLanguageSettings",
+        "title": "Configure Language Settings",
+        "category": "LiteCoder"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "litecoder.acceptSuggestion",
+        "key": "tab",
+        "when": "editorTextFocus && litecoder.suggestionActive"
+      },
+      {
+        "command": "litecoder.acceptSuggestion",
+        "key": "ctrl+right",
+        "when": "editorTextFocus && litecoder.suggestionActive"
+      }
+    ],
+    "configuration": {
+      "title": "LiteCoder AI",
+      "properties": {
+        "litecoder.enableTransparentMode": {
+          "type": "boolean",
+          "default": true,
+          "description": "Enable transparent inline ghost text suggestions"
+        },
+        "litecoder.suggestionDelay": {
+          "type": "number",
+          "default": 100,
+          "description": "Delay in milliseconds before showing suggestions"
+        },
+        "litecoder.securityLevel": {
+          "type": "string",
+          "enum": ["low", "medium", "high"],
+          "default": "medium",
+          "description": "Security scanning intensity level"
+        },
+        "litecoder.enableStatusBar": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show status bar button for accepting suggestions"
+        },
+        "litecoder.enableCodeLens": {
+          "type": "boolean",
+          "default": false,
+          "description": "Show CodeLens acceptance buttons"
+        },
+        "litecoder.languageSettings": {
+          "type": "object",
+          "description": "Language-specific configuration settings"
+        }
+      }
+    },
+    "languages": [
+      {
+        "id": "html",
+        "extensions": [".html", ".htm"],
+        "aliases": ["HTML", "html"]
+      },
+      {
+        "id": "css",
+        "extensions": [".css"],
+        "aliases": ["CSS", "css"]
+      },
+      {
+        "id": "javascript",
+        "extensions": [".js", ".jsx"],
+        "aliases": ["JavaScript", "javascript"]
+      },
+      {
+        "id": "typescript",
+        "extensions": [".ts", ".tsx"],
+        "aliases": ["TypeScript", "typescript"]
+      },
+      {
+        "id": "python",
+        "extensions": [".py"],
+        "aliases": ["Python", "python"]
+      },
+      {
+        "id": "php",
+        "extensions": [".php"],
+        "aliases": ["PHP", "php"]
+      },
+      {
+        "id": "json",
+        "extensions": [".json"],
+        "aliases": ["JSON", "json"]
+      },
+      {
+        "id": "lua",
+        "extensions": [".lua"],
+        "aliases": ["Lua", "lua"]
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts",
+    "test": "node ./out/test/runTest.js",
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.74.0",
+    "@types/node": "16.x",
+    "@typescript-eslint/eslint-plugin": "^5.45.0",
+    "@typescript-eslint/parser": "^5.45.0",
+    "eslint": "^8.28.0",
+    "typescript": "^4.9.4",
+    "vsce": "^2.15.0"
+  },
+  "dependencies": {
+    "axios": "^1.3.4"
+  }
+}

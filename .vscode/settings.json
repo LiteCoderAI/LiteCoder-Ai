@@ -1,0 +1,22 @@
+{
+    "files.exclude": {
+        "out": false,
+        "dist": true,
+        "node_modules": true,
+        ".vscode-test": true
+    },
+    "search.exclude": {
+        "out": true,
+        "dist": true,
+        "node_modules": true,
+        ".vscode-test": true
+    },
+    "typescript.preferences.includePackageJsonAutoImports": "off",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": "explicit"
+    },
+    "eslint.validate": [
+        "typescript"
+    ],
+    "typescript.tsc.autoDetect": "off"
+}
